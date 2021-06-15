@@ -1,0 +1,25 @@
+services:
+    deadromeo.bsd.functions:
+        class: deadromeo\bsd\core\bsd
+        arguments:
+            - '@auth'
+            - '@config'
+            - '@content.visibility'
+            - '@dbal.conn'
+            - '@dispatcher'
+            - '@request'
+            - '@template'
+            - '@user'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+    deadromeo.bsd.listener:
+        class: deadromeo\bsd\event\listener
+        arguments:
+            - '@deadromeo.bsd.functions'
+            - '@config'
+            - '@dbal.conn'
+            - '@request'
+            - '@template'
+            - '@user'
+        tags:
+            - { name: event.listener }

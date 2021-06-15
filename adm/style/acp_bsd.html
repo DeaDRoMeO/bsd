@@ -1,0 +1,45 @@
+<!-- INCLUDE overall_header.html -->
+
+<h1>{L_BSD}<!-- IF BSD_VERSION --> <span style="font-size:0.6em;">v. {BSD_VERSION}</span><!-- ENDIF --></h1>
+
+<form id="acp_bsd" method="post" action="{U_ACTION}">
+	<fieldset>
+		<legend>{L_BSD_ON}:</legend>
+		<dl>
+			<dt><label for="trued">{L_TRUE_B}({START_DATE})? </label><br /><span>{L_TRUE_B_EXP}</span></dt>
+			<dd>
+				<label><input type="radio" class="radio" name="trued" value="1" id="trued" <!-- IF TRUED --> checked="checked"<!-- ENDIF -->/> {L_YES}</label>
+				<label><input type="radio" class="radio" name="trued" value="0" <!-- IF not TRUED --> checked="checked"<!-- ENDIF --> /> {L_NO}</label>
+			</dd>
+		</dl>
+		<dl>
+			<dt><label for="text_b">{L_TEXT_B}:</label><br /><span>{L_TEXT_B_EXP}</span></dt>
+			<dd><input type="text" id="text_b" name="text_b" size="30" value="{TEXT_B}" /></dd>
+		</dl>
+		<dl>
+			<dt><label for="text_c">{L_TEXT_C}:</label><br /><span>{L_TEXT_C_EXP}</span></dt>
+			<dd><input type="text" id="text_c" name="text_c" size="30" value="{TEXT_C}" /></dd>
+		</dl>
+		<dl>
+			<dt><label for="date_c">{L_DATE_F} ({DDAY}):</label><br /><span>{L_DATE_F_EXP}</span></dt>
+			<dd><input type="text" id="date_c" name="date_c" size="30" value="{DATE_C}" /></dd>
+		</dl>
+	</fieldset>
+	<fieldset>
+		<legend>{L_PR}</legend>
+		<dl>
+		{TEXT_B} <!-- IF TRUED --> {START_DATE} <!-- ELSE --> {DDAY} <!-- ENDIF -->	{TEXT_C}
+		</dl>
+	</fieldset>
+	
+	<fieldset>
+		<legend>{L_ACP_SUBMIT_CHANGES}</legend>
+		<p class="submit-buttons">
+			<input class="button1" type="submit" id="submit" name="submit" value="{L_SUBMIT}" />&nbsp;
+			<input class="button2" type="reset" id="reset" name="reset" value="{L_RESET}" />
+		</p>
+		{S_FORM_TOKEN}
+	</fieldset>
+</form>
+
+<!-- INCLUDE overall_footer.html -->

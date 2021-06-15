@@ -1,0 +1,27 @@
+{
+	"name": "deadromeo/bsd",
+	"type": "phpbb-extension",
+	"description": "Расширение добавляет на ваш форум в блок статистики количество дней и лет со времени создания форума",
+	"homepage": "http://###",
+	"version": "1.0.0",
+	"time": "2020-12-01",
+	"license": "GPL-2.0",
+	"authors": [{
+			"name": "DeaDRoMeO",
+			"homepage": "http://hello-vitebsk.ru",
+			"role": "Developer"
+		}],
+	"require": {
+		"php": ">=5.3.3",
+		"phpbb/phpbb": ">=3.3.0"
+	},
+	"extra": {
+		"display-name": "BoardStartDate",
+		"soft-require": {
+         "phpbb/phpbb": ">=3.3.0"
+		 }
+	}
+
+}
+
+
